@@ -25,21 +25,25 @@ main {
   display: flex;
   width: 100%;
   min-height: 100vh;
+  background: var(--light-gradient);
 }
 
 .container-right {
   width: 40%;
+  height: 100vh;
+  animation: fadein 0.5s ease-in;
 }
 
 .container-right img{
     width: 100%;
-    height: 100vh;
+    height: 100%;   
     object-fit: cover;
 }
 
 .container-left {
     width: 60%;
     background: url('./images/bg-pattern-desktop.svg') center / cover ;
+    animation: fadein 1s ease-in;
 }
 
 .left-content{
@@ -84,7 +88,8 @@ p{
 .email-form input{
     width: 100%;
     border-radius: 50px;
-    padding: 20px 40px;
+    padding: 0 40px;
+    height: 50px;
     border: 1px solid hsl(0, 36%, 70%, 0.4);
 }
 
@@ -96,7 +101,7 @@ p{
     position: absolute;
     right: 0;
     top:0;
-    height: 100%;
+    height: 50px;
     padding: 0 50px;
     border-radius: 50px;
     border: 0px;
@@ -114,9 +119,22 @@ p{
     outline: none;
 }
 
+.email-error-msg{
+    margin: 10px 0 0 40px;
+    font-size: 14px;
+    color: var(--soft-red);
+    display: none;
+}
 
+.email-error-msg.active{
+    display: block;
+}
 
-
+@keyframes fadein {
+    from {
+        opacity : 0;
+    }
+}
 
 
 
